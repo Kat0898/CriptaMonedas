@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/listaCriptoBlankFragment">
+
+    <fragment
+        android:id="@+id/listaCriptoBlankFragment"
+        android:name="cl.desafiolatam.kriptomonedas.ui.ListaCriptoBlankFragment"
+        android:label="fragment_lista_cripto_blank"
+        tools:layout="@layout/fragment_lista_cripto_blank" >
+        <action
+            android:id="@+id/action_listaCriptoBlankFragment_to_detalleCriptoBlankFragment"
+            app:destination="@id/detalleCriptoBlankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleCriptoBlankFragment"
+        android:name="cl.desafiolatam.kriptomonedas.ui.DetalleCriptoBlankFragment"
+        android:label="fragment_detalle_cripto_blank"
+        tools:layout="@layout/fragment_detalle_cripto_blank" />
+</navigation>

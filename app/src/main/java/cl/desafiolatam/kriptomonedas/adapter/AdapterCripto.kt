@@ -8,6 +8,7 @@ import cl.desafiolatam.kriptomonedas.R
 import cl.desafiolatam.kriptomonedas.databinding.ItemBinding
 import cl.desafiolatam.kriptomonedas.modelo.CriptoMonedas
 import cl.desafiolatam.kriptomonedas.modelo.Data
+import com.squareup.picasso.Picasso
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -32,11 +33,9 @@ class AdapterCripto : RecyclerView.Adapter<AdapterCripto.CustomViewHolder>() {
             {
               tvNombreItem.text = data.name
               tvPrecio.text = data.priceUsd
-//
-//                Thread(Runnable {
-//                    val img = BitmapFactory.decodeStream(URL(getImageFromSymbol(criptoMonedasItem.symbol)).content as InputStream)
-//                    runCatching { binding.imgItemSymb.setImageBitmap(img) }
-//                }).start()
+
+                Picasso.get().load(getImageFromSymbol(data.symbol)).into(imgItemSymb)
+
                        itemView.setOnClickListener {
                         listener.miOnClick(data)
                                 }

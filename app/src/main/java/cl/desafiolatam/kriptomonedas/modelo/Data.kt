@@ -1,14 +1,17 @@
 package cl.desafiolatam.kriptomonedas.modelo
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-
+@Entity(tableName = "data_cripto")
 data class Data(
     @SerializedName("changePercent24Hr")
     val changePercent24Hr: String,
     @SerializedName("explorer")
     val explorer: String,
     @SerializedName("id")
+    @PrimaryKey
     val id: String,
     @SerializedName("marketCapUsd")
     val marketCapUsd: String,

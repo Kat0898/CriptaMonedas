@@ -5,4 +5,8 @@
     <string name="bienvenido">Bienvenido</string>
     <string name="ingresar_nombre">Registrar</string>
     <string name="usd">USD $ :</string>
+    <string name="change_percent_24_hrs">Change Percent 24 hrs:</string>
+    <string name="vwap_24_hrs">Vwap 24 hrs:</string>
+    <string name="market_cap_usd">Market cap USD</string>
+    <string name="rank">Rank</string>
 </resources>

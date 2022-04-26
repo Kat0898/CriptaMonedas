@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 
 data class CriptoMonedas(
     @SerializedName("data")
-    val data: List<Data>
+    val data: List<DataCriptoM>
 )

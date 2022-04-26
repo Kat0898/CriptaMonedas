@@ -34,13 +34,13 @@ class DetalleCriptoBlankFragment : Fragment() {
         viewModel.moneda.observe(viewLifecycleOwner, Observer {
             with(binding)
             {
-              Picasso.get().load(getImageFromSymbol(it.symbol)).into(imgSymbolDetalle)
-                tvNombreDetalle.text = it.name
-                tvDetalle1Rank.text=it.rank
-                tvDetalle2marketCapUsd.text = it.marketCapUsd
-                tvDetalle3Vwap24Hr.text = it.vwap24Hr
-                tvDetalle4ChangePercent24Hr.text = it.changePercent24Hr
-                tvDetalleValor.text = it.priceUsd
+              Picasso.get().load(getImageFromSymbol(it.symbol!!)).into(imgSymbolDetalle)
+                tvNombreDetalle.text = it.name!!
+                tvDetalle1Rank.text=it.rank!!
+                tvDetalle2marketCapUsd.text = it.marketCapUsd!!
+                tvDetalle3Vwap24Hr.text = it.vwap24Hr!!
+                tvDetalle4ChangePercent24Hr.text = it.changePercent24Hr!!
+                tvDetalleValor.text = it.priceUsd!!
 
             }
 

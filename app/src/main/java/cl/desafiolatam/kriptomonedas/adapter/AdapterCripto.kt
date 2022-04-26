@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import cl.desafiolatam.kriptomonedas.R
 import cl.desafiolatam.kriptomonedas.databinding.ItemBinding
 import cl.desafiolatam.kriptomonedas.modelo.CriptoMonedas
-import cl.desafiolatam.kriptomonedas.modelo.Data
+import cl.desafiolatam.kriptomonedas.modelo.DataCriptoM
 import com.squareup.picasso.Picasso
 import java.util.*
 import kotlin.collections.ArrayList
@@ -27,17 +27,17 @@ class AdapterCripto : RecyclerView.Adapter<AdapterCripto.CustomViewHolder>() {
 
 
 
-        fun bindData(data: Data)
+        fun bindData(dataCriptoM: DataCriptoM)
         {
             with(binding)
             {
-              tvNombreItem.text = data.name
-              tvPrecio.text = data.priceUsd
+              tvNombreItem.text = dataCriptoM.name!!
+              tvPrecio.text = dataCriptoM.priceUsd!!
 
-                Picasso.get().load(getImageFromSymbol(data.symbol)).into(imgItemSymb)
+                Picasso.get().load(getImageFromSymbol(dataCriptoM.symbol!!)).into(imgItemSymb)
 
                        itemView.setOnClickListener {
-                        listener.miOnClick(data)
+                        listener.miOnClick(dataCriptoM)
                                 }
 
 
@@ -47,7 +47,7 @@ class AdapterCripto : RecyclerView.Adapter<AdapterCripto.CustomViewHolder>() {
         }
     }
 
-    var lista:List<Data> = ArrayList()
+    var lista:List<DataCriptoM> = ArrayList()
     lateinit var listener: MiListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
@@ -63,15 +63,15 @@ class AdapterCripto : RecyclerView.Adapter<AdapterCripto.CustomViewHolder>() {
         return lista.size
     }
 
-    fun updateData(criptoMonedas: CriptoMonedas)
+    fun updateData(criptoMonedas: List<DataCriptoM>)
     {
 
-        lista = criptoMonedas.data
+        lista = criptoMonedas
         notifyDataSetChanged()
     }
 
     interface MiListener{
-        fun miOnClick(criptoMonedasItem: Data)
+        fun miOnClick(criptoMonedasItem: DataCriptoM)
     }
 
     fun setMiListener(listener: MiListener)

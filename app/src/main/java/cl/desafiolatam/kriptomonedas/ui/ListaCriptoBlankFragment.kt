@@ -13,7 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import cl.desafiolatam.kriptomonedas.R
 import cl.desafiolatam.kriptomonedas.adapter.AdapterCripto
 import cl.desafiolatam.kriptomonedas.databinding.FragmentListaCriptoBlankBinding
-import cl.desafiolatam.kriptomonedas.modelo.Data
+import cl.desafiolatam.kriptomonedas.modelo.CriptoMonedas
+import cl.desafiolatam.kriptomonedas.modelo.DataCriptoM
 import cl.desafiolatam.kriptomonedas.viewModel.ViewCripto
 
 class ListaCriptoBlankFragment : Fragment() {
@@ -39,14 +40,15 @@ class ListaCriptoBlankFragment : Fragment() {
         }
 
         adapter.setMiListener(object : AdapterCripto.MiListener{
-            override fun miOnClick(criptoMonedasItem: Data) {
-                viewModel.updateMoneda(criptoMonedasItem)
+            override fun miOnClick(criptoMonedasItem: DataCriptoM) {
+                viewModel.updateMonedas(criptoMonedasItem.id)
                 Navigation.findNavController(requireView()).navigate(R.id.action_listaCriptoBlankFragment_to_detalleCriptoBlankFragment)
             }
 
         })
 
-        viewModel.monedas.observe(viewLifecycleOwner, Observer {
+        viewModel.moneCrip.observe(viewLifecycleOwner, Observer {
+
             adapter.updateData(it)
         })
 

@@ -5,30 +5,30 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 @Entity(tableName = "data_cripto")
-data class Data(
+data class DataCriptoM(
     @SerializedName("changePercent24Hr")
-    val changePercent24Hr: String,
+    val changePercent24Hr: String?,
     @SerializedName("explorer")
-    val explorer: String,
+    val explorer: String?,
     @SerializedName("id")
     @PrimaryKey
     val id: String,
     @SerializedName("marketCapUsd")
-    val marketCapUsd: String,
+    val marketCapUsd: String?,
     @SerializedName("maxSupply")
-    val maxSupply: String,
+    val maxSupply: String?,
     @SerializedName("name")
-    val name: String,
+    val name: String?,
     @SerializedName("priceUsd")
-    val priceUsd: String,
+    val priceUsd: String?,
     @SerializedName("rank")
-    val rank: String,
+    val rank: String?,
     @SerializedName("supply")
-    val supply: String,
+    val supply: String?,
     @SerializedName("symbol")
-    val symbol: String,
+    val symbol: String?,
     @SerializedName("volumeUsd24Hr")
-    val volumeUsd24Hr: String,
+    val volumeUsd24Hr: String?,
     @SerializedName("vwap24Hr")
-    val vwap24Hr: String
+    val vwap24Hr: String?
 )

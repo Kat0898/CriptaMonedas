@@ -9,4 +9,7 @@
     <string name="vwap_24_hrs">Vwap 24 hrs:</string>
     <string name="market_cap_usd">Market cap USD</string>
     <string name="rank">Rank</string>
+    <string name="userd">Usuario</string>
+    <string name="registro">Registrado</string>
+    <string name="bienvenido">Bienvenido</string>
 </resources>
